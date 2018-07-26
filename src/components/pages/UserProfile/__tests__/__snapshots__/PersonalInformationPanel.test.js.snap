@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component <PersonalInformationPanel /> should renders with all props correctly 1`] = `
+<ControlPanel
+  editedPanel={Object {}}
+  isOpen={true}
+  isSaveButton={false}
+  isShowControlPanel={true}
+  name="personalInformation"
+  onCancel={[Function]}
+  onEdit={[Function]}
+  onExpand={[Function]}
+  onShow={[Function]}
+  title="Personal Information"
+>
+  <div>
+    <div
+      className="panel-body-inner"
+    >
+      <div
+        className="form"
+      >
+        <div
+          className="form-group-wrapper"
+        >
+          <Row
+            bsClass="row"
+            componentClass="div"
+          >
+            <Col
+              bsClass="col"
+              componentClass="div"
+              md={6}
+              xs={12}
+            >
+              <Row
+                bsClass="row"
+                componentClass="div"
+              >
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                  md={11}
+                >
+                  <div
+                    className="form-group"
+                  >
+                    <label
+                      className="control-label"
+                    >
+                      First Name
+                    </label>
+                    <div
+                      className="form-control-static"
+                    />
+                  </div>
+                  <div
+                    className="form-group"
+                  >
+                    <label
+                      className="control-label"
+                    >
+                      Last Name
+                    </label>
+                    <div
+                      className="form-control-static"
+                    />
+                  </div>
+                  <div
+                    className="form-group"
+                  >
+                    <label
+                      className="control-label"
+                    >
+                      NHS No
+                    </label>
+                    <div
+                      className="form-control-static"
+                    >
+                      99999999
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Col>
+            <Col
+              bsClass="col"
+              componentClass="div"
+              md={6}
+              xs={12}
+            >
+              <Row
+                bsClass="row"
+                componentClass="div"
+              >
+                <div
+                  className="col-md-11 col-md-offset-1"
+                >
+                  <div
+                    className="form-group"
+                  >
+                    <label
+                      className="control-label"
+                    >
+                      Date of Birth
+                    </label>
+                    <div
+                      className="form-control-static ng-binding"
+                    >
+                      01-Jan-2018
+                    </div>
+                  </div>
+                  <div
+                    className="form-group"
+                  >
+                    <label
+                      className="control-label"
+                    >
+                      Gender
+                    </label>
+                    <div
+                      className="form-control-static ng-binding"
+                    >
+                      Female
+                    </div>
+                  </div>
+                  <div
+                    className="form-group"
+                  >
+                    <label
+                      className="control-label"
+                    >
+                      Doctor
+                    </label>
+                    <div
+                      className="form-control-static ng-binding"
+                    >
+                      Dr Emma Huston
+                    </div>
+                  </div>
+                </div>
+              </Row>
+            </Col>
+          </Row>
+        </div>
+      </div>
+    </div>
+  </div>
+</ControlPanel>
+`;
