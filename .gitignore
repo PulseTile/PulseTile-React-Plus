@@ -1,0 +1,18 @@
+# Directories
+node_modules/
+dist/
+coverage
+.nyc_output/
+
+# Extensions
+*.gz
+*.log
+*.log*
+*.rar
+*.tar
+
+#IDE generated
+.idea/
+
+# Files
+./tempTZ.json
