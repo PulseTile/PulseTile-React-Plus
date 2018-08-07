@@ -108,6 +108,8 @@ describe('Component <PatientsSummary />', () => {
         .dive()  // For Vaccinations-plugin
         .dive();
 
+    const expectedElementsNumber = themeConfigs.isLeedsPHRTheme ? 6 : 4;
+
     expect(component).toMatchSnapshot();
 
     expect(component.instance().props.onCategorySelected).toEqual(testProps.onCategorySelected);
@@ -116,7 +118,7 @@ describe('Component <PatientsSummary />', () => {
     expect(component.find('.page-wrapper')).toHaveLength(1);
     expect(component.find('PatientsSummaryListHeader')).toHaveLength(1);
     expect(component.find('.dashboard')).toHaveLength(1);
-    expect(component.find('SimpleDashboardPanel')).toHaveLength(4);
+    expect(component.find('SimpleDashboardPanel')).toHaveLength(expectedElementsNumber);
     expect(component.find('ConfirmationModal')).toHaveLength(0);
 
     component.instance().handleGoToState('contacts');

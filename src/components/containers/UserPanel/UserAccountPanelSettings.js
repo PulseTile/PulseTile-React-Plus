@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
+import { get } from 'lodash';
 import { userProfileTabSelector } from '../../../selectors/user-profile-tab';
 import { changeUserProfileTab } from '../../../ducks/user-profile-tab.duck';
 
@@ -58,6 +58,7 @@ export default class UserAccountPanelSettings extends PureComponent {
   render() {
     const { userProfileTabs } = this.props;
     const { openedUserMenu } = this.state;
+    const openedPanel = get(userProfileTabs, 'openedPanel', '');
     return (
       <div
         className={classNames('user-profile-settings dropdown', { 'open': openedUserMenu === true })}
@@ -71,25 +72,25 @@ export default class UserAccountPanelSettings extends PureComponent {
           <div className="dropdown-menu-wrap-list">
             <div className="dropdown-menu-list">
               <div
-                className={classNames('dropdown-menu-item', { 'active': userProfileTabs.openedPanel === APPLICATION_PREFERENCES })}
+                className={classNames('dropdown-menu-item', { 'active': openedPanel === APPLICATION_PREFERENCES })}
                 onClick={this.handleClickMenuItem(APPLICATION_PREFERENCES)}
               ><span className="dropdown-menu-item-text">Application Preferences</span></div>
               <div
-                className={classNames('dropdown-menu-item', { 'active': userProfileTabs.openedPanel === PERSONAL_INFORMATION })}
+                className={classNames('dropdown-menu-item', { 'active': openedPanel === PERSONAL_INFORMATION })}
                 onClick={this.handleClickMenuItem(PERSONAL_INFORMATION)}
               ><span className="dropdown-menu-item-text">Personal Information</span></div>
               <div
-                className={classNames('dropdown-menu-item', { 'active': userProfileTabs.openedPanel === CONTACT_INFORMATION })}
+                className={classNames('dropdown-menu-item', { 'active': openedPanel === CONTACT_INFORMATION })}
                 onClick={this.handleClickMenuItem(CONTACT_INFORMATION)}
               ><span className="dropdown-menu-item-text">Contact Information</span></div>
               <div
-                className={classNames('dropdown-menu-item', { 'active': userProfileTabs.openedPanel === CHANGE_HISTORY })}
+                className={classNames('dropdown-menu-item', { 'active': openedPanel === CHANGE_HISTORY })}
                 onClick={this.handleClickMenuItem(CHANGE_HISTORY)}
               ><span className="dropdown-menu-item-text">Change History</span></div>
 
               {/* For Feeds-plugin */}
               <div
-                className={classNames('dropdown-menu-item', { 'active': userProfileTabs.openedPanel === FEEDS })}
+                className={classNames('dropdown-menu-item', { 'active': openedPanel === FEEDS })}
                 onClick={this.handleClickMenuItem(FEEDS)}
               ><span className="dropdown-menu-item-text">Feeds</span></div>
 

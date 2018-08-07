@@ -1,7 +1,7 @@
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-15';
-
+import { themeConfigs } from '../../../themes.config';
 import PluginBanner from '../PluginBanner';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -31,7 +31,9 @@ describe('Component <PluginBanner />', () => {
     expect(component).toMatchSnapshot();
 
     component.setProps({ isShowPluginsBigBanner: false });
-    expect(component.find('.page-banner')).toHaveLength(0);
+
+    const pageBannerNumber = themeConfigs.isLeedsPHRTheme ? 1 : 0;
+    expect(component.find('.page-banner')).toHaveLength(pageBannerNumber);
 
     expect(component).toMatchSnapshot();
   });

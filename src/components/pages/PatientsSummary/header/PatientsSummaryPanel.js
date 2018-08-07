@@ -4,7 +4,7 @@ import _ from 'lodash/fp';
 import { lifecycle } from 'recompose';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
-
+import { get } from 'lodash';
 import PTCustomInput from './PTCustomInput';
 import { unmountOnBlur } from '../../../../utils/HOCs/unmount-on-blur.utils'
 import { patientsSummaryConfig } from '../patients-summary.config';
@@ -98,21 +98,21 @@ export default class PatientsSummaryPanel extends PureComponent {
               </div>
             </div> : null }
 
-          {(themeConfigs.patientsSummaryHasPreviewSettings || patientsSummaryHasPreviewSettings) ?
+          {themeConfigs.isLeedsPHRTheme ?
             <div>
               <div className="heading">VIEW OF BOARDS</div>
               <div className="form-group">
                 <Row>
                   <Col xs={12}>
-                    <PTCustomInput type="radio" title="Full View" id="full" name="view-of-preview" value="full" isChecked={selectedViewOptions.full} onChange={this.toggleRadio} />
+                    <PTCustomInput type="radio" title="Full View" id="full" name="view-of-preview" value="full" isChecked={get(selectedViewOptions, 'full', '')} onChange={this.toggleRadio} />
                   </Col>
                 </Row>
                 <Row>
                   <Col xs={12} sm={6}>
-                    <PTCustomInput type="radio" title="Only Preview" id="preview" name="view-of-preview" value="preview" isChecked={selectedViewOptions.preview} onChange={this.toggleRadio} />
+                    <PTCustomInput type="radio" title="Only Preview" id="preview" name="view-of-preview" value="preview" isChecked={get(selectedViewOptions, 'preview', '')} onChange={this.toggleRadio} />
                   </Col>
                   <Col xs={12} sm={6}>
-                    <PTCustomInput type="radio" title="Only List" id="list" name="view-of-preview" value="list" isChecked={selectedViewOptions.list} onChange={this.toggleRadio} />
+                    <PTCustomInput type="radio" title="Only List" id="list" name="view-of-preview" value="list" isChecked={get(selectedViewOptions, 'list', '')} onChange={this.toggleRadio} />
                   </Col>
                 </Row>
               </div>
