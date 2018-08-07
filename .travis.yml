@@ -10,6 +10,7 @@ cache:
 branches:
   only:
     - master
+    - develop
 
 node_js:
   - 8
