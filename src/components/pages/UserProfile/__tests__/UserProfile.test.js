@@ -88,7 +88,9 @@ describe('Component <UserProfile />', () => {
     expect(component.find('PersonalInformationPanel')).toHaveLength(1);
     expect(component.find('ContactInformationPanel')).toHaveLength(1);
     expect(component.find('ChangeHistoryPanel')).toHaveLength(1);
-    expect(component.find('FeedsPanel')).toHaveLength(0);
+
+    const feedsPanelLength = themeConfigs.isLeedsPHRTheme ? 1 : 0;
+    expect(component.find('FeedsPanel')).toHaveLength(feedsPanelLength);
 
     expect(component.find('ApplicationPreferencesPanel').props().openedPanel).toEqual('applicationPreferences');
     expect(component.find('ApplicationPreferencesPanel').props().theme).toEqual({ baseColor: '#0D672F', name: colorName });

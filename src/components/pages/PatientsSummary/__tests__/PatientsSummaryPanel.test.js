@@ -87,10 +87,18 @@ describe('Component <PatientsSummaryPanel />', () => {
     expect(component.instance().props.onCategorySelected).toEqual(testProps.onCategorySelected);
     expect(component.instance().props.selectedCategory).toEqual(testProps.selectedCategory);
 
-    expect(component.find('.heading')).toHaveLength(1);
-    expect(component.find('.heading').text()).toEqual('SHOW');
-    expect(component.find('.form-group')).toHaveLength(1);
-    expect(component.find('PTCustomInput')).toHaveLength(4);
+    const expectedHeadingsNumber = themeConfigs.isLeedsPHRTheme ? 3 : 1;
+
+    expect(component.find('.heading')).toHaveLength(expectedHeadingsNumber);
+    expect(component.find('.form-group')).toHaveLength(expectedHeadingsNumber);
+
+    expect(component.find('.heading').at(0).text()).toEqual('SHOW');
+    if (themeConfigs.isLeedsPHRTheme) {
+      expect(component.find('.heading').at(1).text()).toEqual('FEEDS');
+      expect(component.find('.heading').at(2).text()).toEqual('VIEW OF BOARDS');
+    } else {
+      expect(component.find('PTCustomInput')).toHaveLength(4);
+    }
 
     component.instance().toggleCheckbox('dashboard-name');
     component.setState({ selected: {
@@ -105,7 +113,6 @@ describe('Component <PatientsSummaryPanel />', () => {
       allergies: true,
       medications: false,
     } });
-    expect(component.find('PTCustomInput')).toHaveLength(4);
 
     component.instance().toggleRadio('test');
 
