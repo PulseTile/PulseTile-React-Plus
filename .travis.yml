@@ -34,7 +34,6 @@ after_success:
 notifications:
   email:
     recipients:
-      - tony.shannon@ripple.foundation,
       - bsc@piogroup.net,
       - a.kuvakina@piogroup.net
     on_success: always
